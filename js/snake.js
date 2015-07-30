@@ -19,6 +19,7 @@ $(window).load(function(){
             $("#0_0").attr('class','s 0');
 		
             clearInterval(timer);
+            speed=500;
             timer=setInterval(function(){move();},speed);
 		
             mode="run";
@@ -200,9 +201,19 @@ $(window).load(function(){
         }
 	}
 	function getCookie(){
-        var cookie = document.cookie;
+        var name = "bestScore=";
+        var ca = document.cookie.split(';');
+        var cookie="";
+        for(var i=0; i<ca.length; i++) {
+           var c = ca[i];
+            while (c.charAt(0)==' ') c = c.substring(1);
+            if (c.indexOf(name) === 0){
+                cookie = c.substring(name.length,c.length);
+            }
+        }
+        
         if(cookie!==""){
-            return cookie.replace("bestScore=","");
+            return cookie;
         }
         else{
             return "0";
