@@ -188,7 +188,7 @@ $(window).load(function(){
 		}
 		if(end==15 && mode!="gameOver"){
 			clearInterval(timer);
-			speed=150;
+			speed=200;
 			timer=setInterval(function(){move();},speed);
 		}
 	}
