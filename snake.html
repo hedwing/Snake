@@ -1,0 +1,306 @@
+<!DOCTYPE html> 
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Snake</title>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.3.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="./js/snake.js"></script>
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="./css/snake.css">
+</head>
+
+<body>
+<div id="gameOverMask" style="visibility:hidden">Game Over</div>
+<div id="gameOverBtn" style="visibility:hidden">
+<input type="button" id="btn_restart" class="btn" value="RESTART">
+</div>
+
+<!-- 貪食蛇 -->
+<div id="play">
+<div id="main" class="main">
+<div class="line">
+<div id="0_0" class=""></div>
+<div id="0_1" class=""></div>
+<div id="0_2" class=""></div>
+<div id="0_3" class=""></div>
+<div id="0_4" class=""></div>
+<div id="0_5" class=""></div>
+<div id="0_6" class=""></div>
+<div id="0_7" class=""></div>
+<div id="0_8" class=""></div>
+<div id="0_9" class=""></div>
+<div id="0_10" class=""></div>
+<div id="0_11" class=""></div>
+<div id="0_12" class=""></div>
+<div id="0_13" class=""></div>
+<div id="0_14" class=""></div>
+</div>
+
+<div class="line">
+<div id="1_0" class=""></div>
+<div id="1_1" class=""></div>
+<div id="1_2" class=""></div>
+<div id="1_3" class=""></div>
+<div id="1_4" class=""></div>
+<div id="1_5" class=""></div>
+<div id="1_6" class=""></div>
+<div id="1_7" class=""></div>
+<div id="1_8" class=""></div>
+<div id="1_9" class=""></div>
+<div id="1_10" class=""></div>
+<div id="1_11" class=""></div>
+<div id="1_12" class=""></div>
+<div id="1_13" class=""></div>
+<div id="1_14" class=""></div>
+</div>
+
+<div class="line">
+<div id="2_0" class=""></div>
+<div id="2_1" class=""></div>
+<div id="2_2" class=""></div>
+<div id="2_3" class=""></div>
+<div id="2_4" class=""></div>
+<div id="2_5" class=""></div>
+<div id="2_6" class=""></div>
+<div id="2_7" class=""></div>
+<div id="2_8" class=""></div>
+<div id="2_9" class=""></div>
+<div id="2_10" class=""></div>
+<div id="2_11" class=""></div>
+<div id="2_12" class=""></div>
+<div id="2_13" class=""></div>
+<div id="2_14" class=""></div>
+</div>
+
+<div class="line">
+<div id="3_0" class=""></div>
+<div id="3_1" class=""></div>
+<div id="3_2" class=""></div>
+<div id="3_3" class=""></div>
+<div id="3_4" class=""></div>
+<div id="3_5" class=""></div>
+<div id="3_6" class=""></div>
+<div id="3_7" class=""></div>
+<div id="3_8" class=""></div>
+<div id="3_9" class=""></div>
+<div id="3_10" class=""></div>
+<div id="3_11" class=""></div>
+<div id="3_12" class=""></div>
+<div id="3_13" class=""></div>
+<div id="3_14" class=""></div>
+</div>
+
+<div class="line">
+<div id="4_0" class=""></div>
+<div id="4_1" class=""></div>
+<div id="4_2" class=""></div>
+<div id="4_3" class=""></div>
+<div id="4_4" class=""></div>
+<div id="4_5" class=""></div>
+<div id="4_6" class=""></div>
+<div id="4_7" class=""></div>
+<div id="4_8" class=""></div>
+<div id="4_9" class=""></div>
+<div id="4_10" class=""></div>
+<div id="4_11" class=""></div>
+<div id="4_12" class=""></div>
+<div id="4_13" class=""></div>
+<div id="4_14" class=""></div>
+</div>
+
+<div class="line">
+<div id="5_0" class=""></div>
+<div id="5_1" class=""></div>
+<div id="5_2" class=""></div>
+<div id="5_3" class=""></div>
+<div id="5_4" class=""></div>
+<div id="5_5" class=""></div>
+<div id="5_6" class=""></div>
+<div id="5_7" class=""></div>
+<div id="5_8" class=""></div>
+<div id="5_9" class=""></div>
+<div id="5_10" class=""></div>
+<div id="5_11" class=""></div>
+<div id="5_12" class=""></div>
+<div id="5_13" class=""></div>
+<div id="5_14" class=""></div>
+</div>
+
+<div class="line">
+<div id="6_0" class=""></div>
+<div id="6_1" class=""></div>
+<div id="6_2" class=""></div>
+<div id="6_3" class=""></div>
+<div id="6_4" class=""></div>
+<div id="6_5" class=""></div>
+<div id="6_6" class=""></div>
+<div id="6_7" class=""></div>
+<div id="6_8" class=""></div>
+<div id="6_9" class=""></div>
+<div id="6_10" class=""></div>
+<div id="6_11" class=""></div>
+<div id="6_12" class=""></div>
+<div id="6_13" class=""></div>
+<div id="6_14" class=""></div>
+</div>
+
+<div class="line">
+<div id="7_0" class=""></div>
+<div id="7_1" class=""></div>
+<div id="7_2" class=""></div>
+<div id="7_3" class=""></div>
+<div id="7_4" class=""></div>
+<div id="7_5" class=""></div>
+<div id="7_6" class=""></div>
+<div id="7_7" class=""></div>
+<div id="7_8" class=""></div>
+<div id="7_9" class=""></div>
+<div id="7_10" class=""></div>
+<div id="7_11" class=""></div>
+<div id="7_12" class=""></div>
+<div id="7_13" class=""></div>
+<div id="7_14" class=""></div>
+</div>
+
+<div class="line">
+<div id="8_0" class=""></div>
+<div id="8_1" class=""></div>
+<div id="8_2" class=""></div>
+<div id="8_3" class=""></div>
+<div id="8_4" class=""></div>
+<div id="8_5" class=""></div>
+<div id="8_6" class=""></div>
+<div id="8_7" class=""></div>
+<div id="8_8" class=""></div>
+<div id="8_9" class=""></div>
+<div id="8_10" class=""></div>
+<div id="8_11" class=""></div>
+<div id="8_12" class=""></div>
+<div id="8_13" class=""></div>
+<div id="8_14" class=""></div>
+</div>
+
+<div class="line">
+<div id="9_0" class=""></div>
+<div id="9_1" class=""></div>
+<div id="9_2" class=""></div>
+<div id="9_3" class=""></div>
+<div id="9_4" class=""></div>
+<div id="9_5" class=""></div>
+<div id="9_6" class=""></div>
+<div id="9_7" class=""></div>
+<div id="9_8" class=""></div>
+<div id="9_9" class=""></div>
+<div id="9_10" class=""></div>
+<div id="9_11" class=""></div>
+<div id="9_12" class=""></div>
+<div id="9_13" class=""></div>
+<div id="9_14" class=""></div>
+</div>
+
+<div class="line">
+<div id="10_0" class=""></div>
+<div id="10_1" class=""></div>
+<div id="10_2" class=""></div>
+<div id="10_3" class=""></div>
+<div id="10_4" class=""></div>
+<div id="10_5" class=""></div>
+<div id="10_6" class=""></div>
+<div id="10_7" class=""></div>
+<div id="10_8" class=""></div>
+<div id="10_9" class=""></div>
+<div id="10_10" class=""></div>
+<div id="10_11" class=""></div>
+<div id="10_12" class=""></div>
+<div id="10_13" class=""></div>
+<div id="10_14" class=""></div>
+</div>
+
+<div class="line">
+<div id="11_0" class=""></div>
+<div id="11_1" class=""></div>
+<div id="11_2" class=""></div>
+<div id="11_3" class=""></div>
+<div id="11_4" class=""></div>
+<div id="11_5" class=""></div>
+<div id="11_6" class=""></div>
+<div id="11_7" class=""></div>
+<div id="11_8" class=""></div>
+<div id="11_9" class=""></div>
+<div id="11_10" class=""></div>
+<div id="11_11" class=""></div>
+<div id="11_12" class=""></div>
+<div id="11_13" class=""></div>
+<div id="11_14" class=""></div>
+</div>
+
+<div class="line">
+<div id="12_0" class=""></div>
+<div id="12_1" class=""></div>
+<div id="12_2" class=""></div>
+<div id="12_3" class=""></div>
+<div id="12_4" class=""></div>
+<div id="12_5" class=""></div>
+<div id="12_6" class=""></div>
+<div id="12_7" class=""></div>
+<div id="12_8" class=""></div>
+<div id="12_9" class=""></div>
+<div id="12_10" class=""></div>
+<div id="12_11" class=""></div>
+<div id="12_12" class=""></div>
+<div id="12_13" class=""></div>
+<div id="12_14" class=""></div>
+</div>
+
+<div class="line">
+<div id="13_0" class=""></div>
+<div id="13_1" class=""></div>
+<div id="13_2" class=""></div>
+<div id="13_3" class=""></div>
+<div id="13_4" class=""></div>
+<div id="13_5" class=""></div>
+<div id="13_6" class=""></div>
+<div id="13_7" class=""></div>
+<div id="13_8" class=""></div>
+<div id="13_9" class=""></div>
+<div id="13_10" class=""></div>
+<div id="13_11" class=""></div>
+<div id="13_12" class=""></div>
+<div id="13_13" class=""></div>
+<div id="13_14" class=""></div>
+</div>
+
+<div class="line">
+<div id="14_0" class=""></div>
+<div id="14_1" class=""></div>
+<div id="14_2" class=""></div>
+<div id="14_3" class=""></div>
+<div id="14_4" class=""></div>
+<div id="14_5" class=""></div>
+<div id="14_6" class=""></div>
+<div id="14_7" class=""></div>
+<div id="14_8" class=""></div>
+<div id="14_9" class=""></div>
+<div id="14_10" class=""></div>
+<div id="14_11" class=""></div>
+<div id="14_12" class=""></div>
+<div id="14_13" class=""></div>
+<div id="14_14" class=""></div>
+</div>
+
+</div></div>
+
+<!-- 按鈕區 -->
+<div id="btnArea">
+<input type="button" id="btn_changeMode" class="btn" value="START">
+</div>
+
+<!-- 分數區 -->
+<div id="scoreArea">
+<h3><div id="bestScore" class="label label-default">Best Score&nbsp;&nbsp;0</div></h3>
+<h3><div id="score" class="label label-default">Score&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0</div></h3>
+</div>
+
+</body></html>
