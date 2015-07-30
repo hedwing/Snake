@@ -6,14 +6,6 @@
     top: 20%;
     margin-left: -80px;
 }
-#btnArea {
-    width: 150px;
-    position: absolute;
-    left: 30%;
-    top: 20%;
-    margin-left: 360px;
-    margin-top: 200px;
-}
 #scoreArea {
     width: 150px;
     position: absolute;
@@ -21,6 +13,37 @@
     top: 20%;
     margin-left: 360px;
 }
+#btnArea {
+    width: 150px;
+    position: absolute;
+    left: 30%;
+    top: 20%;
+    margin-left: 360px;
+    margin-top: 150px;
+}
+#infoAreaClose {
+    width: 150px;
+    position: absolute;
+    left: 30%;
+    top: 20%;
+    margin-left: 360px;
+    margin-top: 250px;
+    font-size: 1.2em;
+	color: #666666;
+	font-family: "微軟正黑體", "標楷體";
+}
+#infoAreaOpen {
+    width: 360px;
+    position: absolute;
+    left: 30%;
+    top: 20%;
+    margin-left: 360px;
+    margin-top: 250px;
+    font-size: 1.2em;
+	color: #666666;
+	font-family: "微軟正黑體", "標楷體";
+}
+
 #gameOverMask{
     background-color: rgba(100%,100%,100%,0.5);
 	position: absolute;

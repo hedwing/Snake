@@ -7,6 +7,7 @@ $(window).load(function(){
 	var way="Right";
 	
 	$(document).ready(function(){
+        $("#infoAreaOpen").hide();
 		document.getElementById("score").innerHTML = "Score&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+end;
 		document.getElementById("bestScore").innerHTML = "Best Score&nbsp;&nbsp;"+getCookie();
 	});
@@ -53,6 +54,14 @@ $(window).load(function(){
             
            $('#btn_changeMode').click();
         }
+	});
+	$('#infoAreaClose').click(function() {
+        $("#infoAreaClose").hide();
+        $("#infoAreaOpen").show();
+	});
+	$('#infoAreaOpen').click(function() {
+        $("#infoAreaOpen").hide();
+        $("#infoAreaClose").show();
 	});
 	
 	
