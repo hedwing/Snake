@@ -28,6 +28,7 @@ $(window).load(function(){
             way="Right";
             $("#"+foodX+"_"+foodY).attr('class','');
             food(1);
+            document.getElementById("score").innerHTML = "Score&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+end;
         }
         //pause
         else if(mode=="run"){
@@ -50,20 +51,7 @@ $(window).load(function(){
            $('#gameOverMask').attr("style", "visibility:hidden");
            $('#gameOverBtn').attr("style", "visibility:hidden");
             
-           $(".s").attr('class','');
-           $("#0_0").attr('class','s 0');
-		
-           clearInterval(timer);
-           timer=setInterval(function(){move();},speed);
-		
-           mode="run";
-           $("#btn_changeMode").attr('value','PAUSE');
-           end=0;
-           head=1;
-           row=0;
-           way="Right";
-           $("#"+foodX+"_"+foodY).attr('class','');
-           food(1);
+           $('#btn_changeMode').click();
         }
 	});
 	
