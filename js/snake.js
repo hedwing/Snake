@@ -56,15 +56,23 @@ $(window).load(function(){
            $('#btn_changeMode').click();
         }
 	});
-	$('#infoAreaClose').click(function() {
+	/*$('#infoAreaClose').click(function() {
         $("#infoAreaClose").hide();
         $("#infoAreaOpen").show();
 	});
 	$('#infoAreaOpen').click(function() {
         $("#infoAreaOpen").hide();
         $("#infoAreaClose").show();
+	});*/
+	$('#infoAreaClose').hover(function () {
+        $("#infoAreaClose").hide();
+        $("#infoAreaOpen").show();
+	}, function () {});
+	$('#infoAreaOpen').hover(function () {
+	}, function () {
+        $("#infoAreaOpen").hide();
+        $("#infoAreaClose").show();
 	});
-	
 	
 	$('body').scrollspy({
         target: '.bs-docs-sidebar',
